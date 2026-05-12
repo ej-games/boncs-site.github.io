@@ -17,7 +17,7 @@ function populateCards() {
         var roomClass = item.room == "lower" ? "" : "top"
         var colourProgress = (item.startTime - 10) / 7 * 100;
 
-        var histofyLogo = item.histofy == undefined ? "" : "<span class='histofy-logo' onclick=\"window.location.href ='https://histofy.ai/'\"><img src='/img/HistofyLogo_Light.png'></span>";
+        var histofyLogo = item.histofy == undefined ? "" : "<span class='histofy-logo' onclick=\"window.location.href ='https://histofy.ai/'\"><img src='img/HistofyLogo_Light.png'></span>";
 
         if(item.room == "none" || item.room == undefined) {
             itemToAdd.outerHTML = String.raw`<div class="card">
