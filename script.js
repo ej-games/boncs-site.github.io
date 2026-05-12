@@ -15,20 +15,35 @@ function populateCards() {
         var link = item.room == "lower" ? "https://link.mazemap.com/iJuR9QfV" : "https://link.mazemap.com/TMyGZGvG";
         var roomName = item.room == "lower" ? "OC0.03" : "OC1.05";
         var roomClass = item.room == "lower" ? "" : "top"
-        var cardClass = item.room == "lower" ? "bottom" : "top"
+        var colourProgress = (item.startTime - 10) / 7 * 100;
 
-        itemToAdd.outerHTML = String.raw`<div class="card">
-<span class="time">${formatTime(item.startTime, item.endTime)}</span><span class="room ${roomClass}" style="cursor: pointer;" onclick="window.location.href = '${link}'">${roomName}</span>
-<h2>${item.name}</h2>
-<h3>${item.title}</h3>
-${item.content}
-        </div>`
+        var histofyLogo = item.histofy == undefined ? "" : "<span class='histofy-logo' onclick=\"window.location.href ='https://histofy.ai/'\"><img src='/img/HistofyLogo_Light.png'></span>";
+
+        if(item.room == "none" || item.room == undefined) {
+            itemToAdd.outerHTML = String.raw`<div class="card">
+    <span class="time" style="--progress: ${colourProgress}">${formatTime(item.startTime, item.endTime)}</span>
+    <h2>${item.name}</h2>
+    <h3>${item.title}</h3>
+    ${item.content}
+            </div>`
+        }
+        else {
+            itemToAdd.outerHTML = String.raw`<div class="card">
+    <span class="time" style="--progress: ${colourProgress}">${formatTime(item.startTime, item.endTime)}</span>
+    ${histofyLogo}
+    <span class="room ${roomClass}" onclick="window.location.href = '${link}'">${roomName}</span>
+    <h2>${item.name}</h2>
+    <h3>${item.preTitle == undefined ? "" : item.preTitle + ": "}&ldquo;${item.title}&rdquo;</h3>
+    ${item.content}
+            </div>`
+        }
 
 
     }
 }
 
 function formatTime(start, end) {
+    
     var startHour = Math.floor(start).toString().padStart(2, "0")
     var startMinutes = Math.round((start % 1) * 60).toString().padStart(2, "0")
 

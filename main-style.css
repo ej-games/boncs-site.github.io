@@ -14,6 +14,7 @@ html {
     margin: 0% 20%;
     cursor: default;
     font-weight: 500;
+    background-attachment: fixed;
 }
 pre {
     font-size: 1em;
@@ -42,10 +43,38 @@ pre {
 .card .time {
     font-size: 1.2em;
     font-weight: 600;
-    background-color: rgb(117, 53, 139);
     border-radius: 0.5em;
     padding: 0px 0.5em;
     margin: 0.5em 0px;
+
+    --progress: 0;
+
+    --r-start: 72;
+    --g-start: 144;
+    --b-start: 157;
+    --r-end: 148;
+    --g-end: 63;
+    --b-end: 149;
+
+    background-color: rgb(
+        calc(var(--r-start) + (var(--r-end) - var(--r-start)) * var(--progress) / 100),
+        calc(var(--g-start) + (var(--g-end) - var(--g-start)) * var(--progress) / 100),
+        calc(var(--b-start) + (var(--b-end) - var(--b-start)) * var(--progress) / 100)
+    );
+}
+.card .histofy-logo {
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: rgb(148, 63, 149);
+    border-radius: 0.5em;
+    padding: 0px 0.5em;
+    margin: 0.5em 0px;
+    object-fit: scale-down;
+    cursor:pointer;
+}
+.card .histofy-logo img {
+    height: 1em;
+    transform: translateY(20%);
 }
 .card .room {
     font-size: 1.2em;
@@ -55,6 +84,7 @@ pre {
     padding: 0px 0.5em;
     margin: 0.5em 0px;
     float: right;
+    cursor: pointer;
 }
 .card .room.top {
     background-color: rgb(52, 104, 156);
