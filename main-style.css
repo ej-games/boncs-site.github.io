@@ -1,0 +1,72 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+h1 {
+    text-align: center;
+    font-size: 3em; 
+    font-weight: 900;
+    cursor: default;
+}
+html {
+    background: linear-gradient(#1f404e, rgb(60, 36, 71));
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    margin: 0% 20%;
+    cursor: default;
+    font-weight: 500;
+}
+pre {
+    font-size: 1em;
+    font-family: "Montserrat", sans-serif;
+}
+.cards {
+    
+}
+.card {
+    background-color: #00000066;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 2em 0;
+}
+
+.card h2 {
+    margin: 0px;
+    font-size: 1.8em;
+    cursor: default;
+}
+.card h3 {
+    margin: 0px 0px 1em 0px;
+    font-size: 1.4em;
+    cursor: default;
+}
+.card .time {
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: rgb(117, 53, 139);
+    border-radius: 0.5em;
+    padding: 0px 0.5em;
+    margin: 0.5em 0px;
+}
+.card .room {
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: rgb(40, 115, 37);
+    border-radius: 0.5em;
+    padding: 0px 0.5em;
+    margin: 0.5em 0px;
+    float: right;
+}
+.card .room.top {
+    background-color: rgb(52, 104, 156);
+}
+.space {
+    height: 2em;
+}
+.card.top {
+    float: right;
+    width: 40%;
+}
+.card.bottom {
+    float: left;
+    width: 40%;
+}
