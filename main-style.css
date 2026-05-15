@@ -72,10 +72,12 @@ pre {
     object-fit: scale-down;
     cursor:pointer;
 }
+
 .card .histofy-logo img {
     height: 1em;
     transform: translateY(20%);
 }
+
 .card .room {
     font-size: 1.2em;
     font-weight: 600;

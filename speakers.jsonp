@@ -73,8 +73,8 @@ speakers = [
     },
     {
         "name": "Lunch Break",
-        "startTime": 11.75,
-        "endTime": 12.25,
+        "startTime": 13.25,
+        "endTime": 14.25,
         "title": "",
         "content": "Join us in OC1.06 for lunch (if you've bought a food ticket that is), or you can watch our Lightning Talks® in OC1.04!",
     },
